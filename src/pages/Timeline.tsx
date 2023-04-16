@@ -2,7 +2,7 @@ import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
 import { Tweet } from '../components/Tweet'
 
-import { FormEvent, useState, KeyBoardEvent } from 'react'
+import { FormEvent, useState, KeyboardEvent } from 'react'
 
 import './Timeline.css'
 
@@ -22,7 +22,7 @@ export function Timeline() {
     setNewTweet('')
   }
   
-  function handleHotkeySubmit(event: KeyBoardEvent) {
+  function handleHotkeySubmit(event: KeyboardEvent) {
     if (event.key == 'Enter' && (event.crtlKey || event.metaKey)) {
       setTweets([newTweet, ...tweets])
       setNewTweet('')

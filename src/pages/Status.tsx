@@ -2,7 +2,7 @@ import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
 import { Tweet } from '../components/Tweet'
 
-import { useState, FormEvent, KeyBoardEvent } from 'react'
+import { useState, FormEvent, KeyboardEvent } from 'react'
 
 import { PaperPlaneRight } from '@phosphor-icons/react'
 
@@ -24,7 +24,7 @@ export function Status() {
     setNewAnswer('')
   }
   
-  function handleHotkeySubmit(event: KeyBoardEvent) {
+  function handleHotkeySubmit(event: KeyboardEvent) {
     if (event.key == 'Enter' && (event.crtlKey || event.metaKey)) {
       setAnswers([newAnswer, ...answers])
       setNewAnswer('')
