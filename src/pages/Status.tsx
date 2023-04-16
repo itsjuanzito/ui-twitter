@@ -2,7 +2,7 @@ import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
 import { Tweet } from '../components/Tweet'
 
-import { useState, FormEvent, KeyboardEvent } from 'react'
+import { useState, FormEvent } from 'react'
 
 import { PaperPlaneRight } from '@phosphor-icons/react'
 
@@ -24,13 +24,6 @@ export function Status() {
     setNewAnswer('')
   }
   
-  function handleHotkeySubmit(event: KeyboardEvent) {
-    if (event.key == 'Enter' && (event.crtlKey || event.metaKey)) {
-      setAnswers([newAnswer, ...answers])
-      setNewAnswer('')
-    }
-  }
-  
   return (
     <main className="status">
       <Header title="Tweet" />
@@ -45,7 +38,6 @@ export function Status() {
           <textarea 
             id="tweet" 
             placeholder="Tweet your answer"
-            onKeyDown={handleHotkeySubmit}
             value={newAnswer}
             onChange={(event) => {
               setNewAnswer(event.target.value)
